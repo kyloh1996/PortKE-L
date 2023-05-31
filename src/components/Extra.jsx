@@ -12,7 +12,6 @@ const data = [
 const Section = styled.div`
   height: 80vh;
   scroll-snap-align: center;
-  background-color: purple;
   display: flex;
   justify-content: center;
   position: relative;
@@ -25,22 +24,15 @@ const Section = styled.div`
   width: 1400px;
   display: flex;
   justify-content: space-between;
-
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-    flex-direction: column;
-  }
+  
   `;
+
   const Left = styled.div`
   flex: 3;
   display: flex;
   align-items: center;
-
-  @media only screen and (max-width: 768px) {
-    padding: 20px;
-    justify-content: center;
-  }
   `;
+
   const ListItem = styled.div`
   font-size: 90px;
   font-weight: bold;
@@ -48,11 +40,7 @@ const Section = styled.div`
   color: transparent;
   -webkit-text-stroke: 1px white;
   position: relative;
-
-  @media only screen and (max-width: 768px) {
-    font-size: 24px;
-    color: white;
-    -webkit-text-stroke: 0px;
+  color: black;
   }
 
   ::after {
@@ -60,7 +48,7 @@ const Section = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    color: pink;
+    color: blue;
     width: 0px;
     overflow: hidden;
     white-space: nowrap;
@@ -84,15 +72,16 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+
 `;
 
   const Right = styled.div`
   flex: 2;
   display: flex;
   justify-content: center;
-  font-size:30px;
-
-
+  align-items: center;
+  font-size:60px;
+ 
   `;
 
   const Img = styled.div`

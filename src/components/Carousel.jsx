@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
-  background-color: pink;
+  
 `;
 
 const Container = styled.div`
@@ -17,10 +17,8 @@ const CarouselCont = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3em;
-  flex-wrap: wrap;
-  max-width: 800px; 
-  margin: 0 auto; 
+  gap: 3em; 
+  margin-top: 320px;
 `;
 
 const Button = styled.div`

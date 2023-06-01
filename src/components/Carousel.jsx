@@ -27,6 +27,9 @@ const Button = styled.div`
   border: 2px solid black;
   cursor: pointer;
   padding: 15px;
+  background-image: url(./Images/filler.jpeg);
+  border-radius: 25px; 
+  background-size:cover;
 `;
 
 function Carousel() {

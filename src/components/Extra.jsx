@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const data = [
@@ -18,79 +18,72 @@ const Section = styled.div`
   color: black;
   font-size: 14px;
   font-weight: 300;
-  `;
+`;
 
-  const Container = styled.div`
+const Container = styled.div`
   width: 1400px;
   display: flex;
   justify-content: space-between;
-  
-  `;
+`;
 
-  const Left = styled.div`
+const Left = styled.div`
   flex: 3;
   display: flex;
   align-items: center;
-  `;
+`;
 
-  const ListItem = styled.div`
+const ListItem = styled.div`
   font-size: 90px;
   font-weight: bold;
   cursor: pointer;
   color: transparent;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 2px black;
   position: relative;
-  color: black;
-  }
 
   ::after {
     content: "${(props) => props.text}";
     position: absolute;
     top: 0;
     left: 0;
-    color: blue;
+    color: transparent;
+    text-shadow: 2px 2px 0 #B4F8C8;
     width: 0px;
     overflow: hidden;
     white-space: nowrap;
   }
 
-  &:hover {
-    ::after {
-      animation: moveText 0.5s linear both;
+  &:hover::after {
+    animation: moveText 1s linear both;
+  }
 
-      @keyframes moveText {
-        to {
-          width: 100%;
-        }
-      }
+  @keyframes moveText {
+    to {
+      width: 100%;
     }
   }
 `;
 
-  const List = styled.div`
+const List = styled.div`
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
-
 `;
 
-  const Right = styled.div`
+const Right = styled.div`
   flex: 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size:60px;
- 
-  `;
+  font-size: 60px;
+`;
 
-  const Img = styled.div`
-  `;
+const Img = styled.div``;
 
 function Extra() {
   const [work, setWork] = useState("Web Design");
-    return (
-<Section>
+  return (
+    <Section>
       <Container>
         <Left>
           <List>
@@ -105,7 +98,8 @@ function Extra() {
           <Img> FOR PLACEMENT </Img>
         </Right>
       </Container>
-    </Section>    );
-  }
-  
-  export default Extra;
+    </Section>
+  );
+}
+
+export default Extra;

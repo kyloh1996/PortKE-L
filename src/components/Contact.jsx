@@ -48,13 +48,44 @@ const TextArea = styled.textarea`
 `;
 
 const Button = styled.button`
-  background-color: #da4ea2;
-  color: white;
+  background-color: #B4F8C8;
   border: none;
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
   padding: 20px;
+  overflow: hidden;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgba(180, 248, 200, 0.4);
+  }
+
+  &:hover::before {
+    animation: sh02 0.5s 0s linear;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: #fff;
+    transform: skewX(-20deg);
+    transition: left 0.5s ease-in-out;
+  }
+
+  @keyframes sh02 {
+    from {
+      left: -100%;
+    }
+    to {
+      left: 100%;
+    }
+  }
 `;
 
 

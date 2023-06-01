@@ -29,7 +29,7 @@ const Button = styled.div`
   position: relative;
   height: 20em;
   width: 15em;
-  border: 2px solid black;
+  border: 2px solid blueviolet;
   cursor: pointer;
   padding: 15px;
   border-radius: 25px;
@@ -38,7 +38,11 @@ const Button = styled.div`
 
   &:hover {
     transform: scale(1.05);
-   
+    border-top: 2px solid blueviolet;
+    border-left: 2px solid blueviolet;
+    border-bottom: 2px solid rgb(238, 103, 238);
+    border-right: 2px solid rgb(238, 103, 238);
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px;
   }
 
   display: ${({ visible }) => (visible ? 'block' : 'none')};
@@ -46,13 +50,28 @@ const Button = styled.div`
 `;
 
 const AddButton = styled.button`
-  height: 3rem;
-  width: 3rem;
-  border: none;
-  cursor: pointer;
-  border-radius: 50%;
-  background-color: #eaeaea;
-  font-size: 1.5rem;
+padding: 1rem 2rem;
+font-weight: 700;
+background: #B4F8C8;
+border-radius: .5rem;
+border-bottom: 2px solid blueviolet;
+border-right: 2px solid blueviolet;
+border-top: 2px solid white;
+border-left: 2px solid white;
+transition-duration: 1s;
+transition-property: border-top, 
+   border-left, 
+   border-bottom,
+   border-right,
+   box-shadow;
+
+  &:hover{
+    border-top: 2px solid blueviolet;
+ border-left: 2px solid blueviolet;
+ border-bottom: 2px solid rgb(238, 103, 238);
+ border-right: 2px solid rgb(238, 103, 238);
+ box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px;
+  }
 `;
 
 const DeleteButton = styled.button`
@@ -67,33 +86,58 @@ const DeleteButton = styled.button`
 `;
 
 const RotateButton = styled.button`
-  height: 3rem;
-  width: 3rem;
-  border: none;
-  cursor: pointer;
-  border-radius: 50%;
-  background-color: #eaeaea;
-  font-size: 1.5rem;
   margin-bottom: 20em;
+  padding: 1rem 2rem;
+font-weight: 700;
+background: #B4F8C8;
+border-radius: .5rem;
+border-bottom: 2px solid blueviolet;
+border-right: 2px solid blueviolet;
+border-top: 2px solid white;
+border-left: 2px solid white;
+transition-duration: 1s;
+transition-property: border-top, 
+   border-left, 
+   border-bottom,
+   border-right,
+   box-shadow;
+
+  &:hover{
+ border-top: 2px solid blueviolet;
+ border-left: 2px solid blueviolet;
+ border-bottom: 2px solid rgb(238, 103, 238);
+ border-right: 2px solid rgb(238, 103, 238);
+ box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px;
+  }
 `;
-
-
 const Modal = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 const ModalContent = styled.div`
-  background-color: white;
+  background-color: #fff;
   padding: 2em;
-  border-radius: 5px;
+  border-radius: 5em;
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 30em; /* Increase the max-width to make the modal wider */
+  
+  input {
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1rem;
+  }
 `;
 
 const LinkButton = styled.a`

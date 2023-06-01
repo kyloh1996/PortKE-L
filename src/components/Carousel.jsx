@@ -22,7 +22,7 @@ const CarouselCont = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 3em;
-  margin-bottom:30em;
+  margin-bottom: 30em;
 `;
 
 const Button = styled.div`
@@ -50,27 +50,23 @@ const Button = styled.div`
 `;
 
 const AddButton = styled.button`
-padding: 1rem 2rem;
-font-weight: 700;
-background: #B4F8C8;
-border-radius: .5rem;
-border-bottom: 2px solid blueviolet;
-border-right: 2px solid blueviolet;
-border-top: 2px solid white;
-border-left: 2px solid white;
-transition-duration: 1s;
-transition-property: border-top, 
-   border-left, 
-   border-bottom,
-   border-right,
-   box-shadow;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  background: #b4f8c8;
+  border-radius: 0.5rem;
+  border-bottom: 2px solid blueviolet;
+  border-right: 2px solid blueviolet;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  transition-duration: 1s;
+  transition-property: border-top, border-left, border-bottom, border-right, box-shadow;
 
-  &:hover{
+  &:hover {
     border-top: 2px solid blueviolet;
- border-left: 2px solid blueviolet;
- border-bottom: 2px solid rgb(238, 103, 238);
- border-right: 2px solid rgb(238, 103, 238);
- box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px;
+    border-left: 2px solid blueviolet;
+    border-bottom: 2px solid rgb(238, 103, 238);
+    border-right: 2px solid rgb(238, 103, 238);
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px;
   }
 `;
 
@@ -88,28 +84,25 @@ const DeleteButton = styled.button`
 const RotateButton = styled.button`
   margin-bottom: 20em;
   padding: 1rem 2rem;
-font-weight: 700;
-background: #B4F8C8;
-border-radius: .5rem;
-border-bottom: 2px solid blueviolet;
-border-right: 2px solid blueviolet;
-border-top: 2px solid white;
-border-left: 2px solid white;
-transition-duration: 1s;
-transition-property: border-top, 
-   border-left, 
-   border-bottom,
-   border-right,
-   box-shadow;
+  font-weight: 700;
+  background: #b4f8c8;
+  border-radius: 0.5rem;
+  border-bottom: 2px solid blueviolet;
+  border-right: 2px solid blueviolet;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  transition-duration: 1s;
+  transition-property: border-top, border-left, border-bottom, border-right, box-shadow;
 
-  &:hover{
- border-top: 2px solid blueviolet;
- border-left: 2px solid blueviolet;
- border-bottom: 2px solid rgb(238, 103, 238);
- border-right: 2px solid rgb(238, 103, 238);
- box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px;
+  &:hover {
+    border-top: 2px solid blueviolet;
+    border-left: 2px solid blueviolet;
+    border-bottom: 2px solid rgb(238, 103, 238);
+    border-right: 2px solid rgb(238, 103, 238);
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px;
   }
 `;
+
 const Modal = styled.div`
   position: fixed;
   top: 0;
@@ -132,7 +125,7 @@ const ModalContent = styled.div`
   flex-direction: column;
   gap: 1em;
   max-width: 30em; /* Increase the max-width to make the modal wider */
-  
+
   input {
     width: 100%;
     padding: 0.5em;
@@ -243,8 +236,8 @@ function Carousel() {
             </Button>
           ))}
         </CarouselCont>
-          <AddButton onClick={openModal}>+</AddButton>
-          <RotateButton onClick={rotateRight}>{'>'}</RotateButton>
+        <AddButton onClick={openModal}>+</AddButton>
+        <RotateButton onClick={rotateRight}>{'>'}</RotateButton>
       </Container>
       {isModalOpen && (
         <Modal>
@@ -253,43 +246,49 @@ function Carousel() {
             <form>
               <label htmlFor="title">Title:</label>
               <input type="text" name="title" value={newProjectData.title} onChange={handleInputChange} />
+
               <label htmlFor="creator">Creator(s):</label>
               <input type="text" name="creator" value={newProjectData.creator} onChange={handleInputChange} />
-              <label htmlFor="backgroundStyle">Background Style:</label>
-              <Select name="backgroundStyle" value={newProjectData.backgroundStyle} onChange={handleInputChange}>
+
+              <label htmlFor="backgroundStyle">Style:</label>
+              <Select name="backgroundStyle" value={newProjectData.backgroundStyle || 'default'} onChange={handleInputChange}>
                 <Option value="color">Color</Option>
                 <Option value="image">Image URL</Option>
+                <Option value="default">Default</Option>
               </Select>
+
               {newProjectData.backgroundStyle === 'color' && (
-                <React.Fragment>
-                  <label htmlFor="backgroundColor">Background Color:</label>
-                  <input
-                    type="color"
-                    name="backgroundColor"
-                    value={newProjectData.backgroundColor}
-                    onChange={handleInputChange}
-                  />
-                </React.Fragment>
+                <input
+                  type="color"
+                  name="backgroundColor"
+                  value={newProjectData.backgroundColor}
+                  onChange={handleInputChange}
+                />
               )}
+
               {newProjectData.backgroundStyle === 'image' && (
-                <React.Fragment>
-                  <label htmlFor="backgroundImage">Background Image URL:</label>
-                  <input
-                    type="text"
-                    name="backgroundImage"
-                    value={newProjectData.backgroundImage}
-                    onChange={handleInputChange}
-                  />
-                </React.Fragment>
+                <input
+                  type="text"
+                  name="backgroundImage"
+                  value={newProjectData.backgroundImage}
+                  onChange={handleInputChange}
+                />
               )}
+
+              {newProjectData.backgroundStyle === 'default' && (
+                <input
+                  type="text"
+                  name="backgroundImage"
+                  value={newProjectData.backgroundImage || './Images/filler.jpeg'}
+                  onChange={handleInputChange}
+                />
+              )}
+
               <label htmlFor="link">Link:</label>
               <input type="text" name="link" value={newProjectData.link} onChange={handleInputChange} />
-              <button type="button" onClick={addProject}>
-                Add
-              </button>
-              <button type="button" onClick={closeModal}>
-                Cancel
-              </button>
+
+              <button type="button" onClick={addProject}>Add</button>
+              <button type="button" onClick={closeModal}>Cancel</button>
             </form>
           </ModalContent>
         </Modal>

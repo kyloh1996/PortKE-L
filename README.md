@@ -54,4 +54,5 @@ export default Cube;
 * Import 3D images with Three.js???
 * Create a route for placeholder carousel cards
 * Maybe develope a better background or place an interesting overlay
-* Font types?? -->
+* Font types?? 
+* style input data form for cards -->

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const data = [
@@ -78,24 +78,25 @@ const Right = styled.div`
   font-size: 60px;
 `;
 
-const Img = styled.div``;
+const Img = styled.div`
+
+`;
 
 function Extra() {
-  const [work, setWork] = useState("Web Design");
   return (
     <Section>
       <Container>
         <Left>
           <List>
             {data.map((item) => (
-              <ListItem key={item} text={item} onClick={() => setWork(item)}>
+              <ListItem key={item} text={item}>
                 {item}
               </ListItem>
             ))}
           </List>
         </Left>
         <Right>
-          <Img> FOR PLACEMENT </Img>
+          <Img>FOR PLACEMENT</Img>
         </Right>
       </Container>
     </Section>

@@ -44,3 +44,14 @@ const Cube = () => {
 
 export default Cube;
  -->
+
+
+<!-- Tasks:
+
+* Connect Resume
+* Connect Email.js to contact form
+* Create a carousel function with placeholder cards
+* Import 3D images with Three.js???
+* Create a route for placeholder carousel cards
+* Maybe develope a better background or place an interesting overlay
+* Font types?? -->
